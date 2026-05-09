@@ -20,3 +20,44 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+
+
+@app.route('/user', methods=['POST'])
+def create_user():
+    # siempre en formato JSON
+    data= request.get_json()
+
+    #verificando que el mensaje no este vacio
+    if not data:
+        return jsonify({"msg": "no se proporcionaron datos"}), 400
+
+    #extraer los valores de los campos 
+    email= data.get("email")
+    password= data.get("password")
+    is_active= data.get("is_active", False)
+
+    #validar si el email esta registrado
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        return jsonify({"msg": "ya existe un usuario registrado con ese email"}), 409
+    
+    #crea un registro nuevo 
+    new_user= User(
+        email= email,
+        password= password,
+        is_active= is_active
+    )
+
+    #debe ser guardada en la base de datos
+    db.session.add(new_user)
+
+    try:
+        #confirmar los cambios de forma permanente
+        db.session.commit()
+        return jsonify(new_user.serialize()), 201
+    
+    except Exception as error:
+         #en caso de error se captura la excepcion
+        print(f"Error al crear usuario: {error}")
+        return jsonify({"msg": "Internal Server Error", "error": str(error)}), 500
