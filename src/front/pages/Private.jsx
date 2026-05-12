@@ -59,7 +59,7 @@ export const Private = () => {
         <div className="container text-center mt-5">
 
             <h1 className="display-4 text-success">
-                Private Page 
+                Private Page
             </h1>
 
             <p className="lead">

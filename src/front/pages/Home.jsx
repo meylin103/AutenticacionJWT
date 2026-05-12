@@ -33,20 +33,23 @@ export const Home = () => {
 	}, [])
 
 	return (
-		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
-			<p className="lead">
-				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
-			</p>
-			<div className="alert alert-info">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-danger">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
+		<div className="container py-5">
+
+			<div className="text-center">
+
+				<h1 className="display-3 fw-bold mb-3">
+					JWT Authentication Project
+				</h1>
+
+				<div className="d-flex justify-content-center gap-3">
+					<a href="/signup" className="btn btn-primary btn-lg">
+						Create Account
+					</a>
+
+				</div>
+
 			</div>
+
 		</div>
 	);
 }; 

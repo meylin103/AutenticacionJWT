@@ -11,7 +11,7 @@ import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import { Signup } from "./pages/Signup.jsx";
 import { Login } from "./pages/Login.jsx";
-import { Private } from "./pages/Login.jsx";
+import { Private } from "./pages/Private.jsx";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

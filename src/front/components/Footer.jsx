@@ -1,7 +1,7 @@
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">
 		<p>
-			-JWT Authentication Project-
+			-JWT Authentication Project Meilyn-
 		</p>
 	</footer>
 );
