@@ -80,13 +80,6 @@ def create_user():
 
 @api.route("/login", methods=["POST"])
 def login():
-    # username = request.json.get("username", None)
-    # password = request.json.get("password", None)
-
-    # if username != "test" or password != "test":
-    #     return jsonify({"msg": "Bad username or password"}), 401
-
-
     data= request.get_json()
 
     user= User.query.filter_by(email=data["email"]).first()
