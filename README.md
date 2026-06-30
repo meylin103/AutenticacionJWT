@@ -1,81 +1,150 @@
-# WebApp boilerplate with React JS and Flask API
+# 🔐 JWT Authentication App
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
 
-- Documentation can be found here: https://4geeks.com/docs/start/react-flask-template
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to Render [in just a few steps here](https://4geeks.com/docs/start/deploy-to-render-com).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+---
 
-### 1) Installation:
+# 📖 Overview
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+JWT Authentication App is a full-stack authentication project built with React and Flask to demonstrate secure user authentication using JSON Web Tokens (JWT).
 
-It is recomended to install the backend first, make sure you have Python 3.10, Pipenv and a database engine (Posgress recomended)
+Users can create an account, authenticate securely, and access protected routes only after successful login.
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+This project helped strengthen my understanding of authentication flows, REST APIs, and frontend/backend integration.
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+---
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+# ✨ Features
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+- 🔐 User Registration
+- 🔑 User Login
+- 🎫 JWT Authentication
+- 🛡️ Protected Routes
+- 🚪 Secure Logout
+- 🔄 Frontend and Backend Integration
+- 📱 Responsive Interface
 
-### Undo a migration
+---
 
-You are also able to undo a migration by running
+# 🛠️ Tech Stack
 
-```sh
-$ pipenv run downgrade
+## Frontend
+
+- React
+- JavaScript (ES6+)
+- Vite
+- CSS3
+
+## Backend
+
+- Python
+- Flask
+- Flask-JWT-Extended
+- SQLAlchemy
+
+## Database
+
+- PostgreSQL
+
+---
+
+# 📸 Application Preview
+
+## User Registration
+
+![Sign Up](docs/assets/images/signup.jpg)
+
+---
+
+## Login
+
+![Login](docs/assets/images/login.jpg)
+
+---
+
+## Private Route
+
+![Private Route](docs/assets/images/private-route.jpg)
+
+---
+
+# 🧠 What I Learned
+
+During this project I gained practical experience with:
+
+- JWT Authentication
+- Authentication flows
+- Protected Routes
+- REST API development
+- Frontend and Backend communication
+- SQLAlchemy
+- React state management
+- Secure user sessions
+
+---
+
+# 📂 Project Structure
+
+```
+src/
+├── api/
+├── front/
+├── components/
+├── hooks/
+├── pages/
+└── routes.py
 ```
 
-### Backend Populate Table Users
+---
 
-To insert test users in the database execute the following command:
+# 🚀 Installation
 
-```sh
-$ flask insert-test-users 5
+Clone the repository
+
+```bash
+git clone https://github.com/meylin103/jwt-authentication-app.git
 ```
 
-And you will see the following message:
+Install backend dependencies
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
+```bash
+pipenv install
 ```
 
-### **Important note for the database and the data inside it**
+Install frontend dependencies
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+```bash
+npm install
+```
 
-### Front-End Manual Installation:
+Start the backend
 
--   Make sure you are using node version 20 and that you have already successfully installed and runned the backend.
+```bash
+pipenv run start
+```
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+Start the frontend
 
-## Publish your website!
+```bash
+npm run start
+```
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://4geeks.com/docs/start/deploy-to-render-com).
+---
 
-### Contributors
+# 🌱 Future Improvements
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+- Password recovery
+- Email verification
+- Remember Me functionality
+- Refresh Tokens
+- User profile management
+- Role-based authorization
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+---
+
+# 📄 License
+
+This project was developed for educational purposes and is part of my professional software development portfolio.
