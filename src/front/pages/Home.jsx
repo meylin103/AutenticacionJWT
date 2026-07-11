@@ -1,55 +1,106 @@
-import React, { useEffect } from "react"
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
-import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 
-	const { store, dispatch } = useGlobalReducer()
+    return (
 
-	const loadMessage = async () => {
-		try {
-			const backendUrl = import.meta.env.VITE_BACKEND_URL
+        <div className="container py-5">
 
-			if (!backendUrl) throw new Error("VITE_BACKEND_URL is not defined in .env file")
+            {/* Hero */}
 
-			const response = await fetch(backendUrl + "/api/hello")
-			const data = await response.json()
+            <section className="text-center hero-section">
 
-			if (response.ok) dispatch({ type: "set_hello", payload: data.message })
+                <div className="hero-icon">
+                    <i className="fas fa-shield-alt"></i>
+                </div>
 
-			return data
+                <h1 className="display-3 fw-bold mb-3">
+                    Secure Authentication
+                </h1>
 
-		} catch (error) {
-			if (error.message) throw new Error(
-				`Could not fetch the message from the backend.
-				Please check if the backend is running and the backend port is public.`
-			);
-		}
+                <p className="hero-subtitle">
+                    A modern authentication system built with
+                    <strong> React</strong>, <strong>Flask</strong>,
+                    <strong> JWT</strong>, and
+                    <strong> PostgreSQL</strong>.
+                </p>
 
-	}
+                <p className="hero-description">
+                    Secure user registration, login, protected routes,
+                    and REST API integration following modern web
+                    development practices.
+                </p>
 
-	useEffect(() => {
-		loadMessage()
-	}, [])
+                <div className="d-flex justify-content-center gap-3 mt-4">
 
-	return (
-		<div className="container py-5">
+                    <Link to="/signup" className="btn btn-primary btn-lg px-4">
+                        Create Account
+                    </Link>
 
-			<div className="text-center">
+                    <Link to="/login" className="btn btn-outline-dark btn-lg px-4">
+                        Log In
+                    </Link>
 
-				<h1 className="display-3 fw-bold mb-3">
-					JWT Authentication Project
-				</h1>
+                </div>
 
-				<div className="d-flex justify-content-center gap-3">
-					<a href="/signup" className="btn btn-primary btn-lg">
-						Create Account
-					</a>
+            </section>
 
-				</div>
+            {/* Features */}
 
-			</div>
+            <section className="row mt-5 g-4">
 
-		</div>
-	);
-}; 
+                <div className="col-md-4">
+
+                    <div className="feature-card text-center">
+
+                        <i className="fas fa-user-shield feature-icon"></i>
+
+                        <h4>Secure Login</h4>
+
+                        <p>
+                            Authenticate users securely using JSON Web Tokens.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className="col-md-4">
+
+                    <div className="feature-card text-center">
+
+                        <i className="fas fa-lock feature-icon"></i>
+
+                        <h4>Protected Routes</h4>
+
+                        <p>
+                            Restrict access to authenticated users only.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className="col-md-4">
+
+                    <div className="feature-card text-center">
+
+                        <i className="fas fa-server feature-icon"></i>
+
+                        <h4>REST API</h4>
+
+                        <p>
+                            Backend powered by Flask and PostgreSQL.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    );
+};

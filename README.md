@@ -1,150 +1,160 @@
-# 🔐 JWT Authentication App
+# SecureAuth
 
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
-![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python)
-![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
-![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
+[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![JWT](https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
----
+A full-stack authentication application built with **React**, **Flask**, and **PostgreSQL** that implements secure user authentication using **JSON Web Tokens (JWT)**.
 
-# 📖 Overview
-
-JWT Authentication App is a full-stack authentication project built with React and Flask to demonstrate secure user authentication using JSON Web Tokens (JWT).
-
-Users can create an account, authenticate securely, and access protected routes only after successful login.
-
-This project helped strengthen my understanding of authentication flows, REST APIs, and frontend/backend integration.
+SecureAuth demonstrates user registration, secure login, protected routes, REST API integration, and frontend-backend communication while following modern web development practices.
 
 ---
 
-# ✨ Features
+## Preview
 
-- 🔐 User Registration
-- 🔑 User Login
-- 🎫 JWT Authentication
-- 🛡️ Protected Routes
-- 🚪 Secure Logout
-- 🔄 Frontend and Backend Integration
-- 📱 Responsive Interface
+![SecureAuth](docs/assets/home.jpg)
+
+> Secure authentication flow including user registration, login, JWT validation, and protected routes.
 
 ---
 
-# 🛠️ Tech Stack
+## Features
 
-## Frontend
+- User registration
+- Secure login
+- Protected routes
+- JWT-based authentication
+- Session management
+- Secure logout
+- REST API integration
+- Responsive user interface
+
+---
+
+## Tech Stack
+
+### Frontend
 
 - React
 - JavaScript (ES6+)
 - Vite
 - CSS3
 
-## Backend
+### Backend
 
 - Python
 - Flask
 - Flask-JWT-Extended
 - SQLAlchemy
 
-## Database
+### Database
 
 - PostgreSQL
 
----
+### Tools
 
-# 📸 Application Preview
-
-## User Registration
-
-![Sign Up](docs/assets/images/signup.jpg)
+- Git
+- GitHub
 
 ---
 
-## Login
+## Project Structure
 
-![Login](docs/assets/images/login.jpg)
-
----
-
-## Private Route
-
-![Private Route](docs/assets/images/private-route.jpg)
-
----
-
-# 🧠 What I Learned
-
-During this project I gained practical experience with:
-
-- JWT Authentication
-- Authentication flows
-- Protected Routes
-- REST API development
-- Frontend and Backend communication
-- SQLAlchemy
-- React state management
-- Secure user sessions
-
----
-
-# 📂 Project Structure
-
-```
+```text
 src/
-├── api/
-├── front/
-├── components/
-├── hooks/
-├── pages/
-└── routes.py
+│
+├── api/                  # Flask backend
+│   ├── models.py
+│   ├── routes.py
+│   └── utils.py
+│
+├── front/                # React frontend
+│   ├── assets/
+│   ├── components/
+│   ├── hooks/
+│   ├── pages/
+│   ├── index.css
+│   ├── main.jsx
+│   ├── routes.jsx
+│   └── store.js
+│
+├── app.py
+└── wsgi.py
+
+docs/
+└── assets/
+    └── home.jpg
 ```
 
 ---
 
-# 🚀 Installation
+## Installation
 
-Clone the repository
+### Prerequisites
+
+- Node.js
+- Python
+- Pipenv
+- PostgreSQL
+
+### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/meylin103/jwt-authentication-app.git
-```
 
-Install backend dependencies
+# Navigate to the project
+cd jwt-authentication-app
 
-```bash
+# Install backend dependencies
 pipenv install
-```
 
-Install frontend dependencies
-
-```bash
+# Install frontend dependencies
 npm install
-```
 
-Start the backend
-
-```bash
+# Start the backend
 pipenv run start
-```
 
-Start the frontend
-
-```bash
+# Start the frontend
 npm run start
 ```
 
 ---
 
-# 🌱 Future Improvements
+## Skills Demonstrated
 
-- Password recovery
-- Email verification
-- Remember Me functionality
-- Refresh Tokens
-- User profile management
-- Role-based authorization
+- JWT Authentication
+- Authentication Flow Design
+- Protected Routes
+- REST API Development
+- Frontend & Backend Integration
+- SQLAlchemy ORM
+- React State Management
+- Session Management
+- Secure API Communication
 
 ---
 
-# 📄 License
+## Roadmap
 
-This project was developed for educational purposes and is part of my professional software development portfolio.
+- [ ] Password recovery
+- [ ] Email verification
+- [ ] Remember Me functionality
+- [ ] Refresh tokens
+- [ ] User profile management
+- [ ] Role-based authorization
+
+---
+
+## Author
+
+**Meilyn Fuentes**
+
+AWS Certified Cloud Practitioner
+
+Full Stack Developer | Cloud & Backend Enthusiast
+
+- GitHub: https://github.com/meylin103
+- LinkedIn: https://www.linkedin.com/in/meilynfuentes
